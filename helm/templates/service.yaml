@@ -1,0 +1,25 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-backend
+  namespace: inventory-system
+spec:
+  selector:
+    app: inventory-backend
+  ports:
+  - port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}
+  type: {{ .Values.service.type }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-db
+  namespace: inventory-system
+spec:
+  selector:
+    app: inventory-db
+  ports:
+  - port: 5432
+    targetPort: 5432
+  type: ClusterIP
