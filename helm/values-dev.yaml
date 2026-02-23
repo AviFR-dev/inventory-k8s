@@ -1,0 +1,21 @@
+﻿image:
+  repository: avifrdev/inventory-app
+  tag: latest
+  pullPolicy: Always
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+db:
+  host: inventory-db
+  port: "5432"
+  name: inventory
+  user: postgres
+  password: postgres
+
+app:
+  env: development
