@@ -13,6 +13,7 @@ spec:
       labels:
         app: inventory-backend
     spec:
+      serviceAccountName: inventory-sa
       containers:
       - name: inventory-backend
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
