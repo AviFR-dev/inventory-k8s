@@ -1,6 +1,6 @@
 ﻿image:
   repository: avifrdev/inventory-app
-  tag: "13"
+  tag: "2"
   pullPolicy: Always
 
 replicaCount: 3
